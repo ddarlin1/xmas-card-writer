@@ -1,6 +1,11 @@
 const greetingDisplay = document.getElementById("greeting-display")
 const btn = document.getElementById("btn")
-const bauble = document.getElementById("bauble")
+const toDisplay = document.getElementById("to")
+const fromDisplay = document.getElementById("from")
+
+const toInput = document.getElementById("to-field")
+const fromInput = document.getElementById("from-field")
+
 btn.addEventListener("click", writeGreeting)
 
 const greetings = [
@@ -14,11 +19,12 @@ const greetings = [
 // Task:
 // Write a function to display a random greeting in the card.
 
+// Stretch goals:
+// - Allow the user to input to and from names.
+
 function writeGreeting() {
         let randomGreeting = Math.floor(Math.random() * greetings.length);
         greetingDisplay.innerText = greetings[randomGreeting];
+        toDisplay.textContent = `To: ${toInput.value}`;
+        fromDisplay.textContent = `From: ${fromInput.value}`;
     }
-    
-// Stretch goals:
-// - Allow the user to input to and from names.
-// - Add an input for custom messages.
